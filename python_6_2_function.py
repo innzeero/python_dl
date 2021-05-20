@@ -76,3 +76,42 @@ def introduce_3(first="김", second="길동"):
     print("성은 " + first + "이고, 이름은 " + second + "입니다.")
 
 introduce_3("홍")
+
+# 초깃값을 설정한 인수 뒤에 초깃값을 설정하지 않는 인수를 둘 수 는 없다는 점에 주의
+
+# 즉 아래(introduce_4) 같은 형식으로 함수 정의는 가능하나
+def introduce_4(first, second = "길동"):
+    print("성은 " + first + "이고, 이름은 " + second + "입니다.")
+
+introduce_4("홍")
+
+# introduce_5 같은 형식으로 함수 정의는 불가능하다
+# 다음의 함수를 실행하면 오류 메세지가 발생할 것이다
+# def introduce_5(first="홍", second):
+#     print("성은" + first + "이고 이름은 " + second + "입니다.")
+
+# 위 함수 실행결과
+# SyntaxError: non-default argument follows default argument
+# 초깃값이 없는 인수는 초깃값이 있는 인수 뒤에 올 수 없다
+
+# 문제
+
+def introduce_6(age, n="홍길동"):
+    print(n + "입니다. " + str(age) + "살입니다.")
+
+introduce_6(18)
+# 홍길동입니다. 18살입니다.
+
+
+
+
+
+# 6.2.5 return
+# 함수는 반환값을 설정하여 함수를 호출한 곳으로 그 값을 되돌릴 수 있다
+# 'return 반환값' 으로 기술한다
+# 아래와 같이 return 뒤에 실행 결과를 직접 적을 수도 있다
+
+def introduce_7(first="김", second="길동"):
+    return "성은 " + first + "이고, 이름은 " + second + "입니다."
+
+print(introduce_7("홍"))
