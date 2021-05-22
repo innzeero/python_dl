@@ -115,3 +115,36 @@ def introduce_7(first="김", second="길동"):
     return "성은 " + first + "이고, 이름은 " + second + "입니다."
 
 print(introduce_7("홍"))
+
+# return 뒤에 문자가 길데 나열되면 함수를 이해하기 힘들기 때문에 변수를 정의하여 변환하는 것도 가능
+def introduce_8(first="김", second="길동"):
+    comment = "성은 " + first + "이고, 이름은 " + second + "입니다."
+    return comment
+
+print(introduce_8("황보"))
+
+# 문제
+def bmi(height, weight):
+    return weight / height**2
+
+print(bmi(1.65, 65))
+
+# 6.2.6 함수 import (가져오기)
+# 파이썬에서는 내가 만든 함수 외에도 일반에 공개된 함수를 import 해서 사용할 수 있다
+# 이런 함수는 유사한 용도끼리 set으로 공개되어 있는데 이 set을 package 라고 한다
+# package 안에 들어 있는 하나하나의 함수를 module 이라고 한다
+# 예를 들어 time 이라는 package 안에 time.time(), time.sleep(), time.localtime()과 같이
+# time, sleep, localtime 등의 module 이 존재한다
+# 여기서 time이라는 패키지는 실행 시간의 출력, 프로그램의 중지 시간 등과 같이 시간과 관련된 함수들을 포함한다
+# package는 import하여 사용할 수 있다 ex) package_name.moduel_name
+
+import time # time package import
+now_time = time.time() # time() module을 사용해 현재 시간을 now_time에 대입
+print(now_time) # 현재시각 출력
+
+# from package_name import module_name 이라 작성하면 package name을 생략하고 module name만으로 사용 가능하다
+from time import time
+now_time = time()
+
+
+print(now_time)
